@@ -27,3 +27,11 @@
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+  .myNavigation{
+    z-index: 99;
+  }
+
+  .name{
+    margin-top: 1%;
+  }
