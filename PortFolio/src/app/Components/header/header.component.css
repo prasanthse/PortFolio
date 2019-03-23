@@ -28,10 +28,20 @@
     background-color: #3e8e41;
   }
 
-  .myNavigation{
-    z-index: 99;
-  }
-
   .name{
     margin-top: 1%;
+  }
+
+  h1{
+    font-family: 'Protos';
+    font-size: 200%;
+  }
+
+  .navbar-toggler .icon-bar {
+    margin: 7px;
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: #cccccc;
+    border-radius: 1px;
   }
