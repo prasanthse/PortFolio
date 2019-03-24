@@ -7,6 +7,7 @@ import { HomeComponent } from 'src/app/Components/home/home.component';
 import { HeaderComponent } from 'src/app/Components/header/header.component';
 import { SideNavComponent } from 'src/app/Components/side-nav/side-nav.component';
 import { DefaultComponent } from 'src/app/Components/default/default.component';
+import { ProjectsComponent } from 'src/app/Components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DefaultComponent } from 'src/app/Components/default/default.component';
     HomeComponent,
     HeaderComponent,
     SideNavComponent,
-    DefaultComponent
+    DefaultComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
