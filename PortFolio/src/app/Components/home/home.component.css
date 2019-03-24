@@ -38,7 +38,7 @@ h2.four {
 }
 
 h1.one,h1.two,h1.three {
-    font-size: 100px;
+    font-size: 700%;
 }
 
 h2.four {
@@ -122,8 +122,3 @@ h2.four {
     top: 55%;
     right: 16px;
 }
-
-.homeAlign{
-    margin-top: 75px;
-}
-

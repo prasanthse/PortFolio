@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from 'src/app/Components/home/home.component';
-import { SideNavComponent } from 'src/app/Components/side-nav/side-nav.component';
+// import { HomeComponent } from 'src/app/Components/home/home.component';
+import { DefaultComponent } from 'src/app/Components/default/default.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: DefaultComponent
   }
 ];
 
