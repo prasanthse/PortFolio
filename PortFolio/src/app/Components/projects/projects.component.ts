@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
+  p: number = 1;
+
+  public myProjects = new Array(2);//temperory
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  navigateToTop(){
+    let x = document.querySelector("#projects");
+    if (x){
+        x.scrollIntoView();
+    }
   }
 
 }

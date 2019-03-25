@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -10,6 +12,11 @@ export class SideNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+
   }
 
 }

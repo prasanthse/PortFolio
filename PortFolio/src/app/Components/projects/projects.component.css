@@ -1,0 +1,145 @@
+/*Button Section*/
+
+.main-content {
+  display: grid;
+  width: 10%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.main-content .item {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  flex-wrap: wrap;
+  background: var(--bg-color);
+}
+.main-content .item:not(.footer) {
+  padding-top: 1rem;
+}
+
+button {
+  margin-top: 2px;
+  margin-bottom: 15px;
+  background: transparent;
+  color: black;
+  border: 3px solid black;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font: 24px "Margarine", sans-serif;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
+}
+
+.button-jittery button {
+  animation: jittery 4s infinite;
+}
+.button-jittery button:hover {
+  animation: heartbeat 0.2s infinite;
+}
+
+@keyframes jittery {
+  5%,
+	50% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  25% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.15) rotate(-3deg);
+  }
+  35% {
+    transform: scale(1.15) rotate(2deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(0);
+  }
+}
+@keyframes heartbeat {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*Frames section*/
+
+.tile-wrap {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  border: solid 9px hsl(51, 100%, 35%);
+}
+
+.tile-image {
+  display: block;
+  width: 280px;
+  height: 280px;
+  transition: .7s;
+}
+
+.tile-wrap:hover .tile-image {
+  transform: scale(1.15);
+  -webkit-filter: grayscale(.7);
+  filter: grayscale(.7);
+}
+
+.tile-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 .8em;
+  background: hsl(51, 100%, 92%);
+  color: hsl(51, 100%, 35%);
+  transition: transform .5s;
+  transform: translateY(110%);
+  box-shadow: 0 -4px 33px rgba(0,0,0,.7);
+}
+
+.tile-wrap:hover .tile-text {
+  transform: translateY(0);
+}
+
+.tile-title {
+  font-size: 1.3em;
+  transform: translateY(100%);
+  transition: transform .5s .15s ease-out;
+}
+
+.tile-wrap:hover .tile-title {
+  transform: none;
+}
+
+.tile-description {
+  transform: translateY(100%);
+  transition: transform .5s .3s ease-out;
+}
+
+.tile-wrap:hover .tile-description {
+  transform: none;
+}
+
+/*Pagination*/
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: black;
+  margin-top: 10px;
+}

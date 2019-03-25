@@ -8,6 +8,9 @@ import { HeaderComponent } from 'src/app/Components/header/header.component';
 import { SideNavComponent } from 'src/app/Components/side-nav/side-nav.component';
 import { DefaultComponent } from 'src/app/Components/default/default.component';
 import { ProjectsComponent } from 'src/app/Components/projects/projects.component';
+import { ContactComponent } from 'src/app/Components/contact/contact.component';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,13 @@ import { ProjectsComponent } from 'src/app/Components/projects/projects.componen
     HeaderComponent,
     SideNavComponent,
     DefaultComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
