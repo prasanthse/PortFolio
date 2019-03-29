@@ -1,0 +1,17 @@
+.profile{
+    width: 36vw;
+    margin-left: 3%;
+    height: 45vw;
+    margin-top: -75%;
+    border: 2px solid white;
+}
+
+.name{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 7vw;
+}
+
+.banner{
+    width: 100%;
+    height: auto;
+}
