@@ -9,7 +9,7 @@ export class ProjectsComponent implements OnInit {
 
   p: number = 1;
 
-  public myProjects = new Array(2);//temperory
+  public myProjects = new Array(10);//temperory
 
   constructor() { }
 

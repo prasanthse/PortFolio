@@ -1,52 +1,44 @@
 <div class="container-fluid" id="projects">
   
   <div class="row">
-
     <div class="col-lg-12 text-dark font-weight-bolder text-uppercase text-center bg-warning">
       <h1>Every project has challenges, and every project has its rewards</h1>
     </div>
-
   </div>
 
   <div class="row">
+    <div class="col-sm-6">
+      <div class="item button-jittery bg-warning Buttoncontainer">
+        <button class="btn-dark btn-outline-dark">Academic</button>
+      </div>
+    </div>
+    <div class="col-sm-6">   
+      <div class="item button-jittery bg-dark Buttoncontainer">
+        <button class="btn-warning btn-outline-warning">Non-Academic</button>
+      </div>
+    </div>
+  </div>
 
-    <div class="col-sm-8">
-
-        <div *ngFor = "let frame of myProjects | paginate: { itemsPerPage: 10, currentPage: p }">
-            <div class="tile-wrap">
-              <a href="https://en.wikipedia.org/wiki/Earl_Hines" target="_blank">
-                <img src= "../../../assets/Images/t1.jpg" alt="Project Image" class="tile-image"/>
-                <div class="tile-text">
-                  <h2 class="tile-title">Earl Hines</h2>
-                  <p class="tile-description">Earl Kenneth Hines, universally known as Earl "Fatha" Hines, was an American jazz pianist and bandleader.</p>
-                </div>
-              </a>
+  <div class="row">
+    <div *ngFor = "let frame of myProjects | paginate: { itemsPerPage: 8, currentPage: p }">
+      <div class="col-sm-12">
+        <div class="tile-wrap">
+          <a href="https://en.wikipedia.org/wiki/Earl_Hines" target="_blank">
+            <img src= "../../../assets/Images/Dp.jpg" alt="Project Image" class="tile-image"/>
+            <div class="tile-text">
+              <h2 class="tile-title">Earl Hines</h2>
+              <p class="tile-description">Earl Kenneth Hines, universally known as Earl "Fatha" Hines, was an American jazz pianist and bandleader.</p>
             </div>
+          </a>
         </div>
-
+      </div>
     </div>
-
-    <div class="col-sm-4">
-
-        <!-- <div class="main-content col-sm-4">
-            <div class="item button-jittery bg-warning">
-              <button class="btn-dark btn-outline-dark">Academic</button>
-            </div>
-            <div class="item button-jittery bg-dark">
-              <button class="btn-warning btn-outline-warning">Non-Academic</button>
-            </div>
-        </div> -->
-
-    </div>
-
   </div>
 
   <div class="row">
-
       <div class="col-sm-12 font-weight-bolder text-uppercase text-center bg-warning">
         <pagination-controls class="my-pagination" (click) = "navigateToTop()" (pageChange)="p = $event"></pagination-controls>
       </div>
-  
   </div>
 
 </div>

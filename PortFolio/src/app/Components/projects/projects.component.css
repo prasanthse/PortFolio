@@ -143,3 +143,9 @@ h1{
   background: black;
   margin-top: 10px;
 }
+
+.Buttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
