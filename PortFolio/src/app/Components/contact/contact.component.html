@@ -1,36 +1,83 @@
-<div class="container">
+<div class="container-fluid">
+
     <div class="row">
-        <form class="col s12">
-            <div class="row d-flex flex-column">
-
-                <div class="input-field p-3">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix #2196f3">First Name</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                </div>
-
-                <div class="input-field p-3">
-                    <i class="material-icons prefix">mail</i>
-                    <input id="icon_mail" type="email" class="validate">
-                    <label for="icon_mail">Your Mail</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                </div>
-
-                <div class="input-field p-3">
-                    <i class="material-icons prefix">border_color</i>
-                    <textarea id="textarea" class="materialize-textarea" class="validate"></textarea>
-                    <label for="textarea">Message</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-info waves-effect waves-light">
-                    <strong>SEND</strong>
-                    </button>
-                </div>
-                
-            </div>
-        </form>
+        <div class="col-sm-12 bg-info text-dark font-weight-bolder text-uppercase text-center">
+            <h2>I'm old fashioned with my cell phone. I like that human contact and I think it's important</h2>
+        </div>
     </div>
+
+    <div class="row">
+        
+        <div class="col-sm-2">
+            
+            <div class="tooltipped" data-position="right" data-tooltip="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=100005272362325" target="_blank">
+                    <img class="links" src="../../../assets/Images/Fb.png" alt="Facebook Logo">
+                </a>
+            </div>
+
+            <div class="tooltipped" data-position="right" data-tooltip="Twitter">
+                <a href="https://twitter.com/prasanth15sp" target="_blank">
+                    <img class="links" src="../../../assets/Images/Twitter.png" alt="Twitter Logo">
+                </a>
+            </div>
+
+            <div class="tooltipped" data-position="right" data-tooltip="Email">
+                <a href="mailto:prasanth15sp@gmail.com">
+                    <img class="links" src="../../../assets/Images/Gmail.png" alt="Gmail Logo">
+                </a>
+            </div>
+
+            <div class="tooltipped" data-position="right" data-tooltip="LinkedIn">
+                <a href="https://www.linkedin.com/in/prasanthse1996/" target="_blank">
+                    <img class="links" src="../../../assets/Images/LinkedIn.png" alt="LinkedIn Logo">
+                </a>
+            </div>
+
+            <div class="tooltipped" data-position="right" data-tooltip="Github">
+                <a href="https://github.com/prasanthse" target="_blank">
+                    <img class="links" src="../../../assets/Images/Github.png" alt="Github Logo">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col-sm-9">
+            <br>
+            <h1 class="text-dark font-weight-bolder text-uppercase">Do you want to send me a message?</h1>
+            <form>
+                <div class="formRow">
+                    <i class="small material-icons formIcon">border_color</i>
+                    <label class="text-info font-weight-bolder text-uppercase">Name<span>*</span></label>
+                    <input type="text" name="name" id="name" placeholder="Type Your Name" class="text-dark font-weight-bolder text-uppercase">
+                </div>
+
+                <div class="formRow">
+                    <i class="small material-icons formIcon">call</i>
+                    <label class="text-info font-weight-bolder text-uppercase">Phone Number</label>
+                    <input type="tel" name="tel" id="tel" placeholder="Type Your Phone Number" class="text-dark font-weight-bolder text-uppercase">
+                </div>
+
+                <div class="formRow">
+                    <i class="small material-icons formIcon">contact_mail</i>
+                    <label class="text-info font-weight-bolder text-uppercase">Email Address<span>*</span></label>
+                    <input type="email" name="email" id="email" placeholder="Type Your Email Address" class="text-dark font-weight-bolder text-uppercase">
+                </div>
+
+                <div class="formRow">
+                    <i class="small material-icons formIcon">comment</i>
+                    <label class="text-info font-weight-bolder text-uppercase">Message<span>*</span></label>
+                    <textarea rows="50" cols="15" name="mes" id="mes" placeholder="Type Your Message" class="text-dark font-weight-bolder text-uppercase"></textarea>
+                </div>
+
+                <div class="formRow buttonRow">
+                    <button class="text-info font-weight-bolder text-uppercase" type="submit">Send Message</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
 </div>
