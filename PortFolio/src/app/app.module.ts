@@ -9,6 +9,7 @@ import { SideNavComponent } from 'src/app/Components/side-nav/side-nav.component
 import { DefaultComponent } from 'src/app/Components/default/default.component';
 import { ProjectsComponent } from 'src/app/Components/projects/projects.component';
 import { ContactComponent } from 'src/app/Components/contact/contact.component';
+import { HireComponent } from './Components/hire/hire.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -20,7 +21,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SideNavComponent,
     DefaultComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    HireComponent
   ],
   imports: [
     BrowserModule,
