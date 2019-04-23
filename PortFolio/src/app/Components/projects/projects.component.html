@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-6">
       <div class="item button-jittery bg-warning Buttoncontainer">
         <button class="btn-dark btn-outline-dark">Academic</button>
@@ -17,13 +17,13 @@
         <button class="btn-warning btn-outline-warning">Non-Academic</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div *ngFor = "let frame of myProjects | paginate: { itemsPerPage: 8, currentPage: p }">
       <div class="col-sm-12">
         <div class="tile-wrap">
-          <a href="https://en.wikipedia.org/wiki/Earl_Hines" target="_blank">
+          <a href="#" data-toggle="modal" data-target="#myModal">
             <img src= "../../../assets/Images/Dp.jpg" alt="Project Image" class="tile-image"/>
             <div class="tile-text">
               <h2 class="tile-title">Earl Hines</h2>

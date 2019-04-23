@@ -11,6 +11,7 @@ import { ProjectsComponent } from 'src/app/Components/projects/projects.componen
 import { ContactComponent } from 'src/app/Components/contact/contact.component';
 import { HireComponent } from './Components/hire/hire.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { ProjectModalComponent } from './Components/project-modal/project-modal.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -24,7 +25,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ProjectsComponent,
     ContactComponent,
     HireComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 5px;
+    margin-bottom: 15px;
+}
+
+/* img{
+    width: 100%;
+    border: solid 9px hsl(51, 100%, 35%);
+} */
