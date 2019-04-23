@@ -10,6 +10,7 @@ import { DefaultComponent } from 'src/app/Components/default/default.component';
 import { ProjectsComponent } from 'src/app/Components/projects/projects.component';
 import { ContactComponent } from 'src/app/Components/contact/contact.component';
 import { HireComponent } from './Components/hire/hire.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -22,7 +23,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     DefaultComponent,
     ProjectsComponent,
     ContactComponent,
-    HireComponent
+    HireComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -31,11 +31,12 @@ span{
 button{
     width: 50%;
     background-color: black;
+    border: none;
 }
 
 button:hover{
     width: 52%;
-    background-color: white;
+    background-color: lightblue;
 }
 
 .buttonRow, h1{

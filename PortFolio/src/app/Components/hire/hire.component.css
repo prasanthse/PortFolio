@@ -1,5 +1,5 @@
 .blue-bg {
-  background-color: #4D4545;
+  background-color: white;
   height: 100%;
 }
 
@@ -7,7 +7,7 @@
   font-weight: bold;
   padding: 15px 20px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #4D4545;
   color: black;
   max-height: 50px;
   z-index: 2;
@@ -48,7 +48,7 @@
   height: 40px;
 }
 .timeline hr {
-  border-top: 3px solid white;
+  border-top: 3px solid #4D4545;
   margin: 0;
   top: 17px;
   position: relative;
@@ -85,7 +85,7 @@ h5{
 }
 
 p{
-    color: white;
+    color: #4D4545;
 }
 
 .title{
@@ -102,7 +102,7 @@ a{
 }
 
 span:hover{
-  color: white;
+  color: #4D4545;
   font-size: 120%;
 }
 
