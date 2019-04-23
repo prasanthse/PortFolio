@@ -12,4 +12,5 @@ export class HireComponent implements OnInit {
   ngOnInit() {
   }
 
+  
 }
