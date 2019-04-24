@@ -6,65 +6,100 @@
 
     <hr/>
 
-    <div class="row">
-      <div class="col-sm-12">
-            
+    <div class="wrapper">
+        <input checked type=radio name="slider" id="slide1" />
+        <input type=radio name="slider" id="slide2" />
+        <input type=radio name="slider" id="slide3" />
+        <input type=radio name="slider" id="slide4" />
+        <input type=radio name="slider" id="slide5" />
+      
+        <div class="slider-wrapper">
+          <div class="inner" *ngFor = "let frame of projectInfo">
+            <article>
+              <div class="info top-left">
+                <h3>Malacca</h3></div>
+              <img src="https://farm9.staticflickr.com/8059/28286750501_dcc27b1332_h_d.jpg" />
+            </article>
+          </div>
+        </div>
+      
+        <div class="slider-prev-next-control">
+          <label for=slide1></label>
+          <label for=slide2></label>
+          <label for=slide3></label>
+          <label for=slide4></label>
+          <label for=slide5></label>
+        </div>
+        <!-- .slider-prev-next-control -->
+    
+    </div>
+
+    <hr/>
+
+    <div class="contentPadding">
+      <hr class="bg-warning"/>
+      <div class="row">
+        <div class="col-sm-3 font-weight-bold text-uppercase sideTitle">
+          <h4>Category</h4>
+        </div>
+        <div class="col-sm-9 text-dark font-weight-bold">
+          <h5>Academic</h5>
+        </div>
+      </div>
+      <hr class="bg-warning"/>
+    </div>
+
+    <div class="bg-warning contentPadding">
+      <div class="row">
+        <div class="col-sm-3 font-weight-bold text-uppercase sideTitle">
+          <h4>Type</h4>
+        </div>
+        <div class="col-sm-9 text-dark font-weight-bold">
+          <h5>Individual</h5>
+        </div>
       </div>
     </div>
-      
-    <div class="row">
-      <div class="col-sm-12">
-        
-        <div class="row bg-dark content">
-          <div class="col-sm-3 text-warning font-weight-bold text-uppercase">
-            <h4>Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h4>
-          </div>
-          <div class="col-sm-9 text-light font-weight-bold">
-            <h5>Academic</h5>
-          </div>
-        </div>
 
-        <div class="row bg-dark content">
-          <div class="col-sm-3 text-warning font-weight-bold text-uppercase">
-            <h4>Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h4>
-          </div>
-          <div class="col-sm-9 text-light font-weight-bold">
-            <h5>Individual</h5>
-          </div>
+    <div class="contentPadding">
+      <hr class="bg-warning"/>
+      <div class="row">
+        <div class="col-sm-3 font-weight-bold text-uppercase sideTitle">
+          <h4>Year</h4>
         </div>
-
-        <div class="row bg-dark content">
-          <div class="col-sm-3 text-warning font-weight-bold text-uppercase">
-            <h4>Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h4>
-          </div>
-          <div class="col-sm-9 text-light font-weight-bold">
-            <h5>2019</h5>
-          </div>
-        </div>
-
-        <div class="row bg-dark content">
-          <div class="col-sm-3 text-warning font-weight-bold text-uppercase">
-            <h4>Technologies :</h4>
-          </div>
-          <div class="col-sm-9 text-light font-weight-bold">
-            <h5>Angular 6, Bootstrap, Materialize CSS, Java, Spring Boot, MongoDb</h5>
-          </div>
-        </div>
-
-        <div class="row bg-dark content">
-          <div class="col-sm-3 text-warning font-weight-bold text-uppercase">
-            <h4>Brief Info &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h4>
-          </div>
-          <div class="col-sm-9 text-light font-weight-bold">
-            <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            </h5>
-          </div>
+        <div class="col-sm-9 text-dark font-weight-bold">
+          <h5>2019</h5>
         </div>
       </div>
-    </div> 
-     
+      <hr class="bg-warning"/>
+    </div>
+
+    <div class="bg-warning contentPadding">
+      <div class="row">
+        <div class="col-sm-3 font-weight-bold text-uppercase sideTitle">
+          <h4>Technologies</h4>
+        </div>
+        <div class="col-sm-9 text-dark font-weight-bold">
+          <h5>Angular 6, Bootstrap, Materialize, Java, Spring Boot, MongoDb</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentPadding">
+      <hr class="bg-warning"/>
+      <div class="row">
+        <div class="col-sm-3 font-weight-bold text-uppercase sideTitle">
+          <h4>Brief Info</h4>
+        </div>
+        <div class="col-sm-9 text-dark font-weight-bold">
+          <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          </h5>
+        </div>
+      </div>
+      <hr class="bg-warning"/>
+    </div>
+
     <hr/> 
 </div>

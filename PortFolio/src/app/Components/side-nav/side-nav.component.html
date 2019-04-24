@@ -1,55 +1,192 @@
-<!-- <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-</ul>
-
-<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
-
-<!-- <div class="container-fluid"> -->
+<div id="slide-out" class="sidenav">
   <div class="row">
     <div class="col-sm-12">
-      
-      <img src="../../../assets/Images/Sidenav.jpg" class="img responsive-img banner" alt="cover Photo">
-
-      <div class="title bg-success d-flex justify-content-center">
-        <h1 class="text-light text-uppercase font-weight-bolder name">Sivakumar Prasanth</h1>
+      <img src="../../../assets/Images/Dp.jpg">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Sivakumar Prasanth</h4>
       </div>
-
-      <img src="../../../assets/Images/Dp.jpg" class="img responsive-img profile rounded-circle" alt="profile photo">
-
     </div>
   </div>
 
-  <div class="row bg-dark">
-    <div class="col-sm-4">
-
+  <div class="row">
+    <div class="col-sm-12">
+      <h6 class="text-uppercase font-weight-bold">Male</h6>
+      <hr class="bg-success"/>
+      <h6 class="text-uppercase font-weight-bold">1996 / 03 / 15</h6>
+      <hr class="bg-success"/>
+      <h6 class="text-uppercase font-weight-bold"><a href="mailto:prasanth15sp@gmail.com">prasanth15sp@gmail.com</a></h6>
+      <hr class="bg-success"/>
+      <h6 class="text-uppercase font-weight-bold">Sri Lanka</h6>
+      <hr class="bg-success"/>
     </div>
+  </div>
 
-    <div class="col-sm-4">
+  <div class="row">
+    <div class="col-sm-2">
+      <a href="https://www.facebook.com/profile.php?id=100005272362325" target="_blank"><i class="fa fa-facebook"></i></a>
+    </div>
+    <div class="col-sm-2">
+      <a href="https://twitter.com/prasanth15sp" target="_blank"><i class="fa fa-twitter"></i></a>
+    </div>
+    <div class="col-sm-2">
+      <a href="https://www.linkedin.com/in/prasanthse1996/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+    </div>
+    <div class="col-sm-2">
+      <a href="https://github.com/prasanthse" target="_blank"><i class="fa fa-github"></i></a>
+    </div>
+    <div class="col-sm-2">
+      <a href="mailto:prasanth15sp@gmail.com"><i class="fa fa-google-plus"></i></a>
+    </div>
+    <div class="col-sm-2">
+      <a href="#contact"><i class="fa fa-envelope-o"></i></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Education</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h6 class="text-uppercase font-weight-bold">B.Sc.in Software Engineering (Honors)</h6>
+      <p class="text-uppercase font-weight-bold text-success">University of Kelaniya (2017-2021)</p>
+      <hr class="bg-success"/>
+      <h6 class="text-uppercase font-weight-bold">G.C.E A/L - 3B (Physical Science)</h6>
+      <p class="text-uppercase font-weight-bold text-success">Ng/Wijayaratnam Hindu Central College</p>
+      <hr class="bg-success"/>
+      <h6 class="text-uppercase font-weight-bold">G.C.E O/L - 7As' 1B and 1S</h6>
+      <p class="text-uppercase font-weight-bold text-success">Ng/Wijayaratnam Hindu Central College</p>
+      <hr class="bg-success"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Working Experience</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of workingExperience">
+        <h6 class="text-uppercase font-weight-bold">Freelancer</h6>
+        <p class="text-uppercase font-weight-bold text-success">Since 2018</p>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Languages</h4>
+      </div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of language">
+        <h6 class="text-uppercase font-weight-bold">Tamil</h6>
+        <p class="text-uppercase font-weight-bold text-success">Better</p>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Technical Skills</h4>
+      </div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of technicalSkill">
+        <h6 class="text-uppercase font-weight-bold">Angular 6</h6>
+        <p class="text-uppercase font-weight-bold text-success">Indermediate</p>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Special Achievements</h4>
+      </div>
+    </div>
+  </div>
       
-    </div>
-
-    <div class="col-sm-4">
-      
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of specialAchievement">
+        <h6 class="text-uppercase font-weight-bold">Yarl Geek Season 7</h6>
+        <p class="text-uppercase font-weight-bold text-success">Yarl It Hub - Semi Finalist</p>
+        <hr class="bg-success"/>
+      </div>
     </div>
   </div>
 
-  <div style="border: 2px dotted black">
-    <p class="text-success text-uppercase font-weight-bolder text-justify">
-      Highly dynamic and aspiring personality with leadership, supervision, administrative and interpersonal skills together with academic 
-      achievement and social exposure towards public and corporate sector wish to continue the career as a software engineer in an 
-      organization within a changing and challenging environment to benefit mutual growth and success.
-    </p>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Extra Carriculam Activity</h4>
+      </div>
+    </div>
   </div>
-<!-- </div> -->
+        
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of extraActivity">
+        <h6 class="text-uppercase font-weight-bold">AIESEC</h6>
+        <p class="text-uppercase font-weight-bold text-success">OC Member - University of Kelaniya</p>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Certificate Cources</h4>
+      </div>
+    </div>
+  </div>
+        
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of courses">
+        <h6 class="text-uppercase font-weight-bold">Web Designing</h6>
+        <p class="text-uppercase font-weight-bold text-success">IDM National Campus</p>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-uppercase font-weight-bolder text-success bg-dark name">
+        <h4>Interests</h4>
+      </div>
+    </div>
+  </div>
+          
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor = "let rate of interest">
+        <h6 class="text-uppercase font-weight-bold">Music</h6>
+        <hr class="bg-success"/>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,17 +1,36 @@
-.profile{
-    width: 36vw;
-    margin-left: 3%;
-    height: 45vw;
-    margin-top: -75%;
-    border: 2px solid white;
-}
-
-.name{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 7vw;
-}
-
-.banner{
+img{
+    margin-top: 40px;
     width: 100%;
-    height: auto;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.name, h6, p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+h6{
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+p{
+    font-size: 10px;
+}
+
+a:hover{
+    color: green;
+}
+
+i:hover{
+    font-size: 25px;
+}
+

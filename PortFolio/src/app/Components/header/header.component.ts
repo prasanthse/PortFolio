@@ -11,13 +11,13 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  ngOnInit() {
+    this.tooltipped();
+  }
+
   tooltipped(){
     $(document).ready(function(){
       $('.tooltipped').tooltip();
     });      
-  }
-
-  ngOnInit() {
-    this.tooltipped();
   }
 }
