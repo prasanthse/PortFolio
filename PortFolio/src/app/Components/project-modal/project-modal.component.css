@@ -16,3 +16,15 @@
     width: 100%;
     border: solid 9px hsl(51, 100%, 35%);
 } */
+  
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $:any;
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -14,6 +16,7 @@ export class ProjectsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.modalTrigger();
   }
 
   navigateToTop(){
@@ -21,6 +24,12 @@ export class ProjectsComponent implements OnInit {
     if (x){
         x.scrollIntoView();
     }
+  }
+
+  modalTrigger(){
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
   }
 
 }

@@ -18,7 +18,7 @@
   padding-top: 1rem;
 }
 
-button {
+/* button {
   margin-top: 2px;
   margin-bottom: 15px;
   background: transparent;
@@ -72,7 +72,7 @@ button {
   50% {
     transform: scale(1.1);
   }
-}
+} */
 
 h1{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
