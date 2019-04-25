@@ -45,3 +45,12 @@
     background-color: #cccccc;
     border-radius: 1px;
   }
+
+  .prof{
+    margin-top: 15px;
+    height: 37.5px;
+  }
+
+  .profText{
+    margin-top: -13px;
+  }
