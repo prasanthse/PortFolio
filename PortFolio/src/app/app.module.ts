@@ -13,7 +13,8 @@ import { HireComponent } from './Components/hire/hire.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ProjectModalComponent } from './Components/project-modal/project-modal.component';
 
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -45,36 +45,54 @@
         <div class="col-sm-9">
             <br>
             <h1 class="text-dark font-weight-bolder text-uppercase">Do you want to send me a message?</h1>
-            <form>
+            <form id="Contacts" name="myContacts" novalidate="novalidate" #myContacts = "ngForm" (ngSubmit) = "sendMessage(myContacts)">
                 <div class="formRow">
                     <i class="small material-icons formIcon">border_color</i>
                     <label class="text-info font-weight-bolder text-uppercase">Name<span>*</span></label>
-                    <input type="text" name="name" id="name" placeholder="Type Your Name" class="text-dark font-weight-bolder text-uppercase">
+                    <input type="text" name="name" id="name" placeholder="Type Your Name" class="text-dark font-weight-bolder text-uppercase" required #name="ngModel" [class.is-invalid]="name.touched && name.invalid" [(ngModel)]="contactInstance.name">
+                    <div *ngIf="name.touched && name.invalid" class="text-danger text-uppercase font-weight-bold">
+                        <small>Name is required</small>
+                    </div>
                 </div>
 
                 <div class="formRow">
                     <i class="small material-icons formIcon">call</i>
                     <label class="text-info font-weight-bolder text-uppercase">Phone Number</label>
-                    <input type="tel" name="tel" id="tel" placeholder="Type Your Phone Number" class="text-dark font-weight-bolder text-uppercase">
+                    <input type="tel" name="tel" id="tel" placeholder="Type Your Phone Number" class="text-dark font-weight-bolder text-uppercase" #tel="ngModel" [(ngModel)]="contactInstance.phoneNumber">
                 </div>
 
                 <div class="formRow">
                     <i class="small material-icons formIcon">contact_mail</i>
                     <label class="text-info font-weight-bolder text-uppercase">Email Address<span>*</span></label>
-                    <input type="email" name="email" id="email" placeholder="Type Your Email Address" class="text-dark font-weight-bolder text-uppercase">
+                    <input type="email" name="email" id="email" placeholder="Type Your Email Address" class="text-dark font-weight-bolder" required #email="ngModel" [class.is-invalid]="email.touched && email.invalid" [(ngModel)]="contactInstance.email">
+                    <div *ngIf="email.touched && email.invalid" class="text-danger text-uppercase font-weight-bold">
+                        <small>Email is required</small>
+                    </div>
                 </div>
 
                 <div class="formRow">
                     <i class="small material-icons formIcon">comment</i>
                     <label class="text-info font-weight-bolder text-uppercase">Message<span>*</span></label>
-                    <textarea rows="50" cols="15" name="mes" id="mes" placeholder="Type Your Message" class="text-dark font-weight-bolder text-uppercase"></textarea>
+                    <textarea rows="50" cols="15" name="mes" id="mes" placeholder="Type Your Message" class="text-dark font-weight-bolder text-uppercase" required minlength="25" #mes="ngModel" [class.is-invalid]="mes.touched && mes.invalid" [(ngModel)]="contactInstance.message"></textarea>
+                    <div *ngIf="(mes.touched && mes.invalid) || mes.minlength" class="text-danger text-uppercase font-weight-bold">
+                        <small>Message is required & should be minimum 25 characters</small>
+                    </div>
                 </div>
 
                 <div class="formRow buttonRow">
-                    <button class="text-info font-weight-bolder text-uppercase" type="submit">Send Message</button>
+                    <button id="send" name="send" class="text-info font-weight-bolder text-uppercase" type="submit" [disabled] = "myContacts.form.invalid">Send Message</button>
                 </div>
 
             </form>
+
+            <div class="toast">
+                    <div class="toast-header">
+                      Toast Header
+                    </div>
+                    <div class="toast-body">
+                      Some text inside the toast body
+                    </div>
+                  </div>
 
         </div>
 
