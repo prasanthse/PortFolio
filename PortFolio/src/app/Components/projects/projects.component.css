@@ -18,62 +18,6 @@
   padding-top: 1rem;
 }
 
-/* button {
-  margin-top: 2px;
-  margin-bottom: 15px;
-  background: transparent;
-  color: black;
-  border: 3px solid black;
-  border-radius: 50px;
-  padding: 0.8rem 2rem;
-  font: 24px "Margarine", sans-serif;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  transition: 0.2s ease-in-out;
-  letter-spacing: 2px;
-}
-
-.button-jittery button {
-  animation: jittery 4s infinite;
-}
-.button-jittery button:hover {
-  animation: heartbeat 0.2s infinite;
-}
-
-@keyframes jittery {
-  5%,
-	50% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9);
-  }
-  15% {
-    transform: scale(1.15);
-  }
-  20% {
-    transform: scale(1.15) rotate(-5deg);
-  }
-  25% {
-    transform: scale(1.15) rotate(5deg);
-  }
-  30% {
-    transform: scale(1.15) rotate(-3deg);
-  }
-  35% {
-    transform: scale(1.15) rotate(2deg);
-  }
-  40% {
-    transform: scale(1.15) rotate(0);
-  }
-}
-@keyframes heartbeat {
-  50% {
-    transform: scale(1.1);
-  }
-} */
-
 h1{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -91,7 +35,7 @@ h1{
 .tile-image {
   display: block;
   width: 280px;
-  height: 280px;
+  height: 300px;
   transition: .7s;
 }
 

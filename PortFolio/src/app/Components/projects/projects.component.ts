@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectClass } from 'src/app/Classes/project-class';
+import { CommonServiceService } from 'src/app/Services/common-service.service';
+import { BackendService } from 'src/app/Services/backend.service';
 
 declare var $:any;
 
@@ -11,11 +14,18 @@ export class ProjectsComponent implements OnInit {
 
   p: number = 1;
 
-  public myProjects = new Array(10);//temperory
+  myProjects: ProjectClass[] = [];
 
-  constructor() { }
+  dp: string;
+  title: string;
+  brief: string;
+
+  url: string;
+
+  constructor(private commonService: CommonServiceService, private backend: BackendService) { }
 
   ngOnInit() {
+    this.getResponse();
     this.modalTrigger();
   }
 
@@ -30,6 +40,16 @@ export class ProjectsComponent implements OnInit {
     $(document).ready(function(){
       $('.modal').modal();
     });
+  }
+
+  getResponse(){
+    this.backend.withOutBodyRequest(this.url).subscribe(data => {
+      this.myProjects = data;
+    });
+  }
+
+  parseId(projectInstance: any){
+    this.commonService.setProjectDetailsForModal(projectInstance);
   }
 
 }

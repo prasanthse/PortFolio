@@ -1,24 +1,22 @@
 <div id="projectDetail" class="modal modal-xl popup">
     <!-- Modal Header -->
     <div class="title bg-warning">
-      <h1 class="modal-title text-uppercase font-weight-bolder text-dark">Modal Heading</h1>
+      <h1 class="modal-title text-uppercase font-weight-bolder text-dark">{{projectInfo.title}}</h1>
     </div>
 
     <hr/>
 
     <div class="wrapper">
-        <input checked type=radio name="slider" id="slide1" />
-        <input type=radio name="slider" id="slide2" />
-        <input type=radio name="slider" id="slide3" />
-        <input type=radio name="slider" id="slide4" />
-        <input type=radio name="slider" id="slide5" />
+        <input checked type=radio name={{projectInfo.gallery[0]}} id="slide1" />
+        <input type=radio name={{projectInfo.gallery[1]}} id="slide2" />
+        <input type=radio name={{projectInfo.gallery[2]}} id="slide3" />
+        <input type=radio name={{projectInfo.gallery[3]}} id="slide4" />
+        <input type=radio name={{projectInfo.gallery[4]}} id="slide5" />
       
         <div class="slider-wrapper">
-          <div class="inner" *ngFor = "let frame of projectInfo">
+          <div class="inner" *ngFor = "let frame of projectInfo.gallery">
             <article>
-              <div class="info top-left">
-                <h3>Malacca</h3></div>
-              <img src="https://farm9.staticflickr.com/8059/28286750501_dcc27b1332_h_d.jpg" />
+              <img src= {{frame}} />
             </article>
           </div>
         </div>
@@ -43,7 +41,7 @@
           <h4>Category</h4>
         </div>
         <div class="col-sm-9 text-dark font-weight-bold">
-          <h5>Academic</h5>
+          <h5>{{projectInfo.category}}</h5>
         </div>
       </div>
       <hr class="bg-warning"/>
@@ -55,7 +53,7 @@
           <h4>Type</h4>
         </div>
         <div class="col-sm-9 text-dark font-weight-bold">
-          <h5>Individual</h5>
+          <h5>{{projectInfo.type}}</h5>
         </div>
       </div>
     </div>
@@ -67,7 +65,7 @@
           <h4>Year</h4>
         </div>
         <div class="col-sm-9 text-dark font-weight-bold">
-          <h5>2019</h5>
+          <h5>{{projectInfo.year}}</h5>
         </div>
       </div>
       <hr class="bg-warning"/>
@@ -79,7 +77,7 @@
           <h4>Technologies</h4>
         </div>
         <div class="col-sm-9 text-dark font-weight-bold">
-          <h5>Angular 6, Bootstrap, Materialize, Java, Spring Boot, MongoDb</h5>
+          <h5>{{projectInfo.technologies}}</h5>
         </div>
       </div>
     </div>
@@ -91,11 +89,7 @@
           <h4>Brief Info</h4>
         </div>
         <div class="col-sm-9 text-dark font-weight-bold">
-          <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-              xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-          </h5>
+          <h5>{{projectInfo.explain}}</h5>
         </div>
       </div>
       <hr class="bg-warning"/>

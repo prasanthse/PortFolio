@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactClass } from 'src/app/Classes/contact-class'
+import { ContactClass } from 'src/app/Classes/contact-class';
+import { BackendService } from 'src/app/Services/backend.service';
 
-declare var $: any;
+declare var $, M: any;
 
 @Component({
   selector: 'app-contact',
@@ -12,10 +13,13 @@ export class ContactComponent implements OnInit {
 
   contactInstance = new ContactClass();
 
-  constructor() { }
+  form: any;
+  url: string;
+  responseState: boolean;
 
-  ngOnInit() {
-    this.tooltipped();
+  constructor(private backend: BackendService) { }
+
+  ngOnInit() {  
   }
 
   tooltipped(){
@@ -24,23 +28,34 @@ export class ContactComponent implements OnInit {
     });      
   }
 
-  toast(){
-    $(document).ready(function(){
-      $("#send").click(function(){
-        $('.toast').toast('show');
-      });
+  sendMessage(form: any){
+
+    this.form = form;
+
+    this.backend.withBodyRequest(this.url, this.contactInstance).subscribe(data => {
+      this.responseState = data;
+      this.giveFeedback();
     });
+    
   }
 
-  sendMessage(form: any){
-    console.log(this.contactInstance.name);
-    console.log(this.contactInstance.phoneNumber);
-    console.log(this.contactInstance.email);
-    console.log(this.contactInstance.message);
+  timeOut(){
+    setTimeout(()=>{
+      this.form.reset();
+    }, 1500);
+  }
 
-    form.reset();
+  toast(message: string){
+    M.toast({html: message, classes: 'rounded'});
+  }
 
-    this.toast();
+  giveFeedback(){
+    if(this.responseState){
+      this.toast("Your message send successfully");
+      this.timeOut();
+    }else{
+      this.toast("Your message sending is failed");
+    }
   }
 
 }

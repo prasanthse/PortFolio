@@ -6,28 +6,15 @@
     </div>
   </div>
 
-  <!-- <div class="row">
-    <div class="col-sm-6">
-      <div class="item button-jittery bg-warning Buttoncontainer">
-        <button class="btn-dark btn-outline-dark">Academic</button>
-      </div>
-    </div>
-    <div class="col-sm-6">   
-      <div class="item button-jittery bg-dark Buttoncontainer">
-        <button class="btn-warning btn-outline-warning">Non-Academic</button>
-      </div>
-    </div>
-  </div> -->
-
   <div class="row">
     <div *ngFor = "let frame of myProjects | paginate: { itemsPerPage: 8, currentPage: p }">
       <div class="col-sm-12">
         <div class="tile-wrap">
-          <a href="" data-target="projectDetail" class="modal-trigger">
-            <img src= "../../../assets/Images/Dp.jpg" alt="Project Image" class="tile-image"/>
+          <a href="" data-target="projectDetail" class="modal-trigger" (click) = "parseId(frame)">
+            <img src= {{frame.id}} alt="Project Image" class="tile-image"/>
             <div class="tile-text">
-              <h2 class="tile-title">Earl Hines</h2>
-              <p class="tile-description">Earl Kenneth Hines, universally known as Earl "Fatha" Hines, was an American jazz pianist and bandleader.</p>
+              <h2 class="tile-title">{{frame.title}}</h2>
+              <p class="tile-description">{{frame.brief}}</p>
             </div>
           </a>
         </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-declare var $:any;
+import { ProjectClass } from 'src/app/Classes/project-class';
+import { CommonServiceService } from 'src/app/Services/common-service.service';
 
 @Component({
   selector: 'app-project-modal',
@@ -9,12 +9,14 @@ declare var $:any;
 })
 export class ProjectModalComponent implements OnInit {
 
-  public projectInfo = new Array(5);//temperory
+  projectInfo = new ProjectClass();
 
-  constructor() { }
+  constructor(private commonService: CommonServiceService) { }
 
   ngOnInit() {
-    
+    this.commonService.currentProjectDetail.subscribe(data => {
+      this.projectInfo = data;
+    });
   }
 
 }

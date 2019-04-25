@@ -1,7 +1,7 @@
 <div id="slide-out" class="sidenav">
   <div class="row">
     <div class="col-sm-12">
-      <img src="../../../assets/Images/Dp.jpg">
+      <img src= {{dp}}>
       <div class="text-uppercase font-weight-bolder text-success bg-dark name">
         <h4>Sivakumar Prasanth</h4>
       </div>
@@ -75,8 +75,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of workingExperience">
-        <h6 class="text-uppercase font-weight-bold">Freelancer</h6>
-        <p class="text-uppercase font-weight-bold text-success">Since 2018</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -93,8 +93,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of language">
-        <h6 class="text-uppercase font-weight-bold">Tamil</h6>
-        <p class="text-uppercase font-weight-bold text-success">Better</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -111,8 +111,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of technicalSkill">
-        <h6 class="text-uppercase font-weight-bold">Angular 6</h6>
-        <p class="text-uppercase font-weight-bold text-success">Indermediate</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -129,8 +129,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of specialAchievement">
-        <h6 class="text-uppercase font-weight-bold">Yarl Geek Season 7</h6>
-        <p class="text-uppercase font-weight-bold text-success">Yarl It Hub - Semi Finalist</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -147,8 +147,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of extraActivity">
-        <h6 class="text-uppercase font-weight-bold">AIESEC</h6>
-        <p class="text-uppercase font-weight-bold text-success">OC Member - University of Kelaniya</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -165,8 +165,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of courses">
-        <h6 class="text-uppercase font-weight-bold">Web Designing</h6>
-        <p class="text-uppercase font-weight-bold text-success">IDM National Campus</p>
+        <h6 class="text-uppercase font-weight-bold">{{rate.content}}</h6>
+        <p class="text-uppercase font-weight-bold text-success">{{rate.subcontent}}</p>
         <hr class="bg-success"/>
       </div>
     </div>
@@ -183,7 +183,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div *ngFor = "let rate of interest">
-        <h6 class="text-uppercase font-weight-bold">Music</h6>
+        <h6 class="text-uppercase font-weight-bold">{{rate}}</h6>
         <hr class="bg-success"/>
       </div>
     </div>

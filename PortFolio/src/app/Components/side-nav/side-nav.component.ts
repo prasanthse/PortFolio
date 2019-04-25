@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileInfoClass } from 'src/app/Classes/profile-info-class';
+import { BackendService } from 'src/app/Services/backend.service';
 
 declare var $: any;
 
@@ -9,17 +11,23 @@ declare var $: any;
 })
 export class SideNavComponent implements OnInit {
 
-  public workingExperience = new Array(3);
-  public language = new Array(3);
-  public technicalSkill = new Array(5);
-  public specialAchievement = new Array(4);
-  public extraActivity = new Array(1);
-  public courses = new Array(3);
-  public interest = new Array(3);
+  dp: string;
+  workingExperience: any;
+  language: any;
+  technicalSkill: any;
+  specialAchievement: any;
+  extraActivity: any;
+  courses: any;
+  interest: any;
 
-  constructor() { }
+  url: string;
+  
+  profileInfo = new ProfileInfoClass();
+
+  constructor(private backend: BackendService) { }
 
   ngOnInit() {
+    this.getResponse();
     this.sideNav();
   }
 
@@ -27,6 +35,24 @@ export class SideNavComponent implements OnInit {
     $(document).ready(function(){
       $('.sidenav').sidenav();
     });
+  }
+
+  getResponse(){
+    this.backend.withOutBodyRequest(this.url).subscribe(data => {
+      this.profileInfo = data;
+      this.setVariables();
+    });
+  }
+
+  setVariables(){
+    this.dp = this.profileInfo.dp;
+    this.extraActivity = this.profileInfo.extraActivity;
+    this.interest = this.profileInfo.interest;
+    this.language = this.profileInfo.language;
+    this.specialAchievement = this.profileInfo.specialAchievement;
+    this.technicalSkill = this.profileInfo.technicalSkill;
+    this.workingExperience = this.profileInfo.workingExperience;
+    this.courses = this.profileInfo.courses;
   }
 
 }
