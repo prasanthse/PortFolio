@@ -1,29 +1,29 @@
 package com.Backend.Portfolio.Controller;
 
 import NeedClasses.RandomIdGenerator;
-import com.Backend.Portfolio.Model.Test;
-import com.Backend.Portfolio.Repository.TestRepository;
+import com.Backend.Portfolio.Model.Contact;
+import com.Backend.Portfolio.Repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("test")
+@RequestMapping("Contacts")
 @CrossOrigin("http://localhost:4200")
-public class TestController {
+public class ContactController {
 
     @Autowired
-    private TestRepository testRepository;
+    private ContactRepository contactRepository;
 
-    @PostMapping("/sendInfo")
-    public boolean insertContact(@RequestBody Test testInfo){
+    @PostMapping("/sendContactInfo")
+    public boolean contactAdmin(@RequestBody Contact contact){
 
         RandomIdGenerator randomIdGenerator = new RandomIdGenerator();
-        testInfo.setId(randomIdGenerator.generateId());
+        contact.setId(randomIdGenerator.generateId());
 
-        System.out.println(testInfo.toString());
+        System.out.println(contact.toString());
 
         try{
-            this.testRepository.save(testInfo);
+            this.contactRepository.save(contact);
             System.out.println("Successfully uploaded the contact us details to the db");
             return true;
         }catch (Exception ex){
