@@ -3,7 +3,7 @@ package com.prasanth.portfolio.Sections;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Contact")
+@Document("Contacts")
 public class Contact {
 
     @Id
