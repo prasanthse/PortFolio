@@ -19,10 +19,7 @@ public class Project {
     private String[] gallery;
     private String category;
     private String type;
-
-    //@Indexed(direction = IndexDirection.DESCENDING)
     private int year;
-
     private String technologies;
     private String explain;
 
