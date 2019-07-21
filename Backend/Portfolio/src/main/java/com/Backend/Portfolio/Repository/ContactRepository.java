@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, String> {
 
-    public List<Contact> findAll();
+    List<Contact> findAll();
 }

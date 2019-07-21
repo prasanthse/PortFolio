@@ -13,7 +13,6 @@ public class Project {
     @Id
     private String id;
 
-    private String dp;
     private String title;
     private String brief;
     private String[] gallery;
@@ -26,8 +25,7 @@ public class Project {
     public Project() {
     }
 
-    public Project(String dp, String title, String brief, String[] gallery, String category, String type, int year, String technologies, String explain) {
-        this.dp = dp;
+    public Project(String title, String brief, String[] gallery, String category, String type, int year, String technologies, String explain) {
         this.title = title;
         this.brief = brief;
         this.gallery = gallery;
@@ -40,10 +38,6 @@ public class Project {
 
     public String getId() {
         return id;
-    }
-
-    public String getDp() {
-        return dp;
     }
 
     public String getTitle() {
@@ -82,10 +76,6 @@ public class Project {
         this.id = id;
     }
 
-    public void setDp(String dp) {
-        this.dp = dp;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -122,7 +112,6 @@ public class Project {
     public String toString() {
         return "Project{" +
                 "id='" + id + '\'' +
-                ", dp='" + dp + '\'' +
                 ", title='" + title + '\'' +
                 ", brief='" + brief + '\'' +
                 ", gallery=" + (gallery == null ? null : Arrays.asList(gallery)) +
