@@ -9,15 +9,13 @@ public class Profile {
     @Id
     private String id;
 
-    private String content;
-    private String subcontent;
+    private String dp;
 
     public Profile() {
     }
 
-    public Profile(String content, String subcontent) {
-        this.content = content;
-        this.subcontent = subcontent;
+    public Profile(String dp) {
+        this.dp = dp;
     }
 
     public String getId() {
@@ -28,28 +26,19 @@ public class Profile {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getDp() {
+        return dp;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getSubcontent() {
-        return subcontent;
-    }
-
-    public void setSubcontent(String subcontent) {
-        this.subcontent = subcontent;
+    public void setDp(String dp) {
+        this.dp = dp;
     }
 
     @Override
     public String toString() {
         return "Profile{" +
                 "id='" + id + '\'' +
-                ", content='" + content + '\'' +
-                ", subcontent='" + subcontent + '\'' +
+                ", dp='" + dp + '\'' +
                 '}';
     }
 }

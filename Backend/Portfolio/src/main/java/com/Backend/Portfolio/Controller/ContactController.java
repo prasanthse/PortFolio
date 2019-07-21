@@ -35,7 +35,7 @@ public class ContactController {
         }
     }
 
-    /*@GetMapping("/getAll")
+    @GetMapping("/getAll")
     public List<Contact> getAllContacts(){
         try {
             List<Contact> contacts = this.contactRepository.findAll();
@@ -46,7 +46,7 @@ public class ContactController {
             System.out.println("Error: " + ex);
             return null;
         }
-    }*/
+    }
 
     @DeleteMapping("/deleteAll")
     public boolean deleteAllContact(){

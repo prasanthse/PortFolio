@@ -59,7 +59,7 @@ public class ProjectController {
         }
     }
 
-    /*@GetMapping("/getAll")
+    @GetMapping("/getAll")
     public List<Project> getAllProjects(){
         try {
             List<Project> projects = this.projectRepository.findAll();
@@ -70,5 +70,5 @@ public class ProjectController {
             System.out.println("Error: " + ex);
             return  null;
         }
-    }*/
+    }
 }
