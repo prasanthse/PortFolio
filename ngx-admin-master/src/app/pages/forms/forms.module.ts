@@ -14,10 +14,7 @@ import {
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsRoutingModule } from './forms-routing.module';
 import { FormsComponent } from './forms.component';
-import { FormInputsComponent } from './form-inputs/form-inputs.component';
 import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
-import { DatepickerComponent } from './datepicker/datepicker.component';
-import { ButtonsComponent } from './buttons/buttons.component';
 
 @NgModule({
   imports: [
@@ -36,10 +33,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
   ],
   declarations: [
     FormsComponent,
-    ButtonsComponent,
-    FormInputsComponent,
-    FormLayoutsComponent,
-    DatepickerComponent,
+    FormLayoutsComponent
   ],
 })
 export class FormsModule { }
