@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends CrudRepository<Project, String> {
 
-    public List<Project> findAll();
+    List<Project> findAll();
+    List<Project> findAllOrOrderByYear();
 }

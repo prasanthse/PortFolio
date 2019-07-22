@@ -1,0 +1,64 @@
+Contacts:
+	
+	Send contact details -
+		Post:	http://localhost:4200/Contacts/sendInfo
+	Get all contact details -
+		Get:	http://localhost:4200/Contacts/getAll
+	Delete all contact details -
+		Delete:	http://localhost:4200/Contacts/deleteAll
+	Delete contact by id -
+		Delete:	http://localhost:4200/Contacts/deleteId/---------
+
+				** id **
+
+
+Profile Header:
+
+	Upload profile photo -
+		Post:	http://localhost:4200/ProfileHeader/upload
+	Get profile photo -
+		Get:	http://localhost:4200/ProfileHeader/getDp
+	Remove profile photo -
+		Delete:	http://localhost:4200/ProfileHeader/delete
+	Update profile photo -
+		Post:	http://localhost:4200/ProfileHeader/update
+
+
+Profile Body:
+
+	Upload profile information -
+		Post:	http://localhost:4200/ProfileBody/upload
+	Get all profile information-
+		Get:	http://localhost:4200/ProfileBody/getAll
+	Get profile information by type -
+		Get:	http://localhost:4200/ProfileBody/getTypeInfo/---------
+
+				** working **
+				** language **
+				** technical **
+				** special **
+				** extra **
+				** certificate **
+				** interest **
+
+	Delete all profile information -
+		Delete:	http://localhost:4200/ProfileBody/deleteAll
+	Delete profile information by id -
+		Delete:	http://localhost:4200/ProfileBody/deleteId/--------
+
+				** id **
+
+
+Projects:
+
+	Upload project information -
+		Post:	http://localhost:4200/Projects/upload
+	Delete all the project information -
+		Delete:	http://localhost:4200/Projects/deleteAll
+	Delete project information by id -
+		Delete:	http://localhost:4200/Projects/delete/---------
+
+				** id **
+
+	Get all project information -
+		Get:	http://localhost:4200/Projects/getAll

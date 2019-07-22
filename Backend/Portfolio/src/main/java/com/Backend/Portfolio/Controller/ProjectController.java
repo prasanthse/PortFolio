@@ -96,7 +96,8 @@ public class ProjectController {
     @GetMapping("/getAll")
     public List<Project> getAllProjects(){
         try {
-            List<Project> projects = this.projectRepository.findAll();
+            //List<Project> projects = this.projectRepository.findAll();
+            List<Project> projects = this.projectRepository.findAllOrOrderByYear();
             System.out.println("Successfully retrieved all the projects");
             return  projects;
         }catch (Exception ex){
