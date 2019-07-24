@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
   title: string;
   brief: string;
 
-  url: string;
+  url: string = "Projects/getAll";
 
   constructor(private commonService: CommonServiceService, private backend: BackendService) { }
 
@@ -43,7 +43,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   getResponse(){
-    this.backend.withOutBodyRequest(this.url).subscribe(data => {
+    this.backend.getRequest(this.url).subscribe(data => {
       this.myProjects = data;
     });
   }

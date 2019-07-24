@@ -73,7 +73,7 @@
                 <div class="formRow">
                     <i class="small material-icons formIcon">comment</i>
                     <label class="text-info font-weight-bolder text-uppercase">Message<span>*</span></label>
-                    <textarea rows="50" cols="15" name="mes" id="mes" placeholder="Type Your Message" class="text-dark font-weight-bolder text-uppercase" required minlength="25" #mes="ngModel" [class.is-invalid]="mes.touched && mes.invalid" [(ngModel)]="contactInstance.message"></textarea>
+                    <textarea rows="50" cols="15" name="mes" id="mes" placeholder="Type Your Message" class="text-dark font-weight-bolder" required minlength="25" #mes="ngModel" [class.is-invalid]="mes.touched && mes.invalid" [(ngModel)]="contactInstance.message"></textarea>
                     <div *ngIf="(mes.touched && mes.invalid) || mes.minlength" class="text-danger text-uppercase font-weight-bold">
                         <small>Message is required & should be minimum 25 characters</small>
                     </div>

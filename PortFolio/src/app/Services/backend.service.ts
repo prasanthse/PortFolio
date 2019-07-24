@@ -13,8 +13,8 @@ export class BackendService {
   httpOptions = {
     headers: new HttpHeaders({
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, GET',
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Methods': 'POST, GET, DELETE',
+      'Content-Type': 'application/json',
     })
   };
 
@@ -22,12 +22,12 @@ export class BackendService {
     return observableThrowError(error.message || "Server Error");
   }
 
-  withOutBodyRequest(url: string):Observable<any> {
+  getRequest(url: string):Observable<any> {
     return this.http.get<any>(url).pipe(catchError(this.errorHandler));
   }
 
-  withBodyRequest(url: string, body:any):Observable<any> {
-    return this.http.post<any>(url, body).pipe(catchError(this.errorHandler));
+  postRequest(url: string, body:any):Observable<any> {
+    return this.http.post<any>(url, body, this.httpOptions).pipe(catchError(this.errorHandler));
   }
 
 }

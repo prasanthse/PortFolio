@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
   contactInstance = new ContactClass();
 
   form: any;
-  url: string;
+  url =  "Contacts/sendInfo";
   responseState: boolean;
 
   constructor(private backend: BackendService) { }
@@ -32,11 +32,10 @@ export class ContactComponent implements OnInit {
 
     this.form = form;
 
-    this.backend.withBodyRequest(this.url, this.contactInstance).subscribe(data => {
+    this.backend.postRequest(this.url, this.contactInstance).subscribe(data => {
       this.responseState = data;
       this.giveFeedback();
     });
-    
   }
 
   timeOut(){

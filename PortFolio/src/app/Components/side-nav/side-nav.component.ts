@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileInfoClass } from 'src/app/Classes/profile-info-class';
+import { ProfileDp } from 'src/app/Classes/profile-dp';
+import { ProfileNoInterest } from 'src/app/Classes/profile-no-interest';
+import { ProfileInterest } from 'src/app/Classes/profile-interest';
 import { BackendService } from 'src/app/Services/backend.service';
 
 declare var $: any;
@@ -11,18 +13,23 @@ declare var $: any;
 })
 export class SideNavComponent implements OnInit {
 
-  dp: string;
-  workingExperience: any;
-  language: any;
-  technicalSkill: any;
-  specialAchievement: any;
-  extraActivity: any;
-  courses: any;
-  interest: any;
+  profile: ProfileDp[] = [];
+  workingExperience: ProfileNoInterest[] = [];
+  language: ProfileNoInterest[] = [];
+  technicalSkill: ProfileNoInterest[] = [];
+  specialAchievement: ProfileNoInterest[] = [];
+  extraActivity: ProfileNoInterest[] = [];
+  courses: ProfileNoInterest[] = [];
+  interest: ProfileInterest[] = [];
 
-  url: string;
-  
-  profileInfo = new ProfileInfoClass();
+  urlDp: string =  "ProfileHeader/getDp";
+  urlWorking: string = "ProfileBody/getTypeInfo/working";
+  urlLanguage: string = "ProfileBody/getTypeInfo/language";
+  urlTechnical: string = "ProfileBody/getTypeInfo/technical";
+  urlSpecial: string = "ProfileBody/getTypeInfo/special";
+  urlExtra: string = "ProfileBody/getTypeInfo/extra";
+  urlCertificate: string = "ProfileBody/getTypeInfo/certificate";
+  urlInterest: string = "ProfileBody/getTypeInfo/interest";
 
   constructor(private backend: BackendService) { }
 
@@ -38,21 +45,38 @@ export class SideNavComponent implements OnInit {
   }
 
   getResponse(){
-    this.backend.withOutBodyRequest(this.url).subscribe(data => {
-      this.profileInfo = data;
-      this.setVariables();
+    
+    this.backend.getRequest(this.urlDp).subscribe(data => {
+      this.profile = data;
     });
-  }
 
-  setVariables(){
-    this.dp = this.profileInfo.dp;
-    this.extraActivity = this.profileInfo.extraActivity;
-    this.interest = this.profileInfo.interest;
-    this.language = this.profileInfo.language;
-    this.specialAchievement = this.profileInfo.specialAchievement;
-    this.technicalSkill = this.profileInfo.technicalSkill;
-    this.workingExperience = this.profileInfo.workingExperience;
-    this.courses = this.profileInfo.courses;
-  }
+    this.backend.getRequest(this.urlWorking).subscribe(data => {
+      this.workingExperience = data;
+    });
 
+    this.backend.getRequest(this.urlLanguage).subscribe(data => {
+      this.language = data;
+    });
+
+    this.backend.getRequest(this.urlTechnical).subscribe(data => {
+      this.technicalSkill = data;
+    });
+
+    this.backend.getRequest(this.urlSpecial).subscribe(data => {
+      this.specialAchievement = data;
+    });
+
+    this.backend.getRequest(this.urlExtra).subscribe(data => {
+      this.extraActivity = data;
+    });
+
+    this.backend.getRequest(this.urlCertificate).subscribe(data => {
+      this.courses = data;
+    });
+
+    this.backend.getRequest(this.urlInterest).subscribe(data => {
+      this.interest = data;
+    });
+
+  }
 }

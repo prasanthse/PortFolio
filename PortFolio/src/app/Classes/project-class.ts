@@ -1,7 +1,6 @@
 export class ProjectClass {
 
     id: string;
-    dp: string;
     title: string;
     brief: string;
     gallery: any;
@@ -10,5 +9,4 @@ export class ProjectClass {
     year: number;
     technologies: string;
     explain: string;
-
 }
