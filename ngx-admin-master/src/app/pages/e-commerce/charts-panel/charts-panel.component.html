@@ -9,29 +9,27 @@
 
         <article>
 
-          <div>
+          <div *ngFor = "let order of orderDetails">
               <hr class="bg-primary">
           
               <div class="row">
                 <div class="col-sm-4 d-flex justify-content-center bg-danger">
-                    <h6>Project: Game Development</h6>
+                    <h6>Project: {{order.project}}</h6>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-center bg-success">
-                    <h6>Platform: Fiverr</h6>
+                    <h6>Platform: {{order.platform}}</h6>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-center bg-primary">
-                    <h6>Client: John</h6>
+                    <h6>Client: {{order.client}}</h6>
                 </div>
               </div>
               
               <br>
             
-              <p class="bg-light">
-                Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: 
-                a paragraph is a group of at least five sentences, a paragraph is half a page long, etc.
-              </p>
-              <p class="bg-light d-flex justify-content-end"><i><b>2019/07/25</b></i><p>
-              <button type="button" id="delete" class="btn-primary">Delete</button>
+              <p class="bg-light">{{order.brief}}</p>
+
+              <p class="bg-light d-flex justify-content-end"><i><b>{{order.date}}</b></i><p>
+              <button type="button" id="delete" class="btn-primary" (click) = "deleteOrderDetail(order.id)">Delete</button> 
           </div>
   
           </article>
@@ -61,16 +59,16 @@
               </div>
             </div>
 
-            <div>
+            <div *ngFor = "let order of orderDetails">
               <div class="row">
                 <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>Web Development</h6>
+                  <h6>{{order.project}}</h6>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>Free Lancer</h6>
+                  <h6>{{order.platform}}</h6>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>$10</h6>
+                  <h6>${{order.profit}}</h6>
                 </div>
               </div>
             </div>
@@ -82,7 +80,7 @@
 
           <div class="row bg-warning">
             <div class="col-sm-12 d-flex justify-content-center">
-              <h5>Total Profit: $50</h5>
+              <h5>Total Profit: ${{chartPanelSummary.totalProfit}}</h5>
             </div>
           </div>
           

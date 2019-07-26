@@ -8,6 +8,7 @@ import { ProfitChart } from '../../../@core/data/profit-chart';
 import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/data/orders-profit-chart';
 
 import { ECommerceOrderCount } from '../../../Classes/e-commerce-order-count';
+import { ECommerceOrders } from '../../../Classes/e-commerce-orders';
 import { BackEndService } from '../../../Service/back-end.service';
 
 @Component({
@@ -17,10 +18,14 @@ import { BackEndService } from '../../../Service/back-end.service';
 })
 export class ECommerceChartsPanelComponent implements OnDestroy {
 
-  url = "";
+  urlCount = "";
+  urlDetail = "";
+  urlDelete = "";
   errorMessage: string;
+
   private alive = true;
 
+  orderDetails: ECommerceOrders[] = [];
   chartPanelSummary = new ECommerceOrderCount();
 
   //chartPanelSummary: OrderProfitChartSummary[];
@@ -38,9 +43,14 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
     //      this.chartPanelSummary = summary;
     //    });
 
-    this.backend.getRequest(this.url).subscribe(message => {
+    this.backend.getRequest(this.urlCount).subscribe(message => {
       this.chartPanelSummary = message;
     }, error => this.errorMessage = error);
+
+    this.backend.getRequest(this.urlDetail).subscribe(message => {
+      this.orderDetails = message;
+    }, error => this.errorMessage = error);
+
   }
 
   setPeriodAndGetChartData(value: string): void {
@@ -60,4 +70,14 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   ngOnDestroy() {
     this.alive = false;
   }
+
+  deleteOrderDetail(id: string){
+    if(confirm("Are you sure to delete ?")) {
+      this.backend.getRequest(this.urlDelete).subscribe(message => {
+        this.orderDetails = message;
+        console.log("Successfully deleted Order Detail of id " + id);
+      }, error => this.errorMessage = error);
+    }
+  }
+
 }

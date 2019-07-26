@@ -6,5 +6,5 @@ export class ECommerceOrders {
     client: string;
     brief: string;
     date: string;
-    
+    profit: number;
 }

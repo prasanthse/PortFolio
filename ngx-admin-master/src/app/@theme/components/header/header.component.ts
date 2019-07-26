@@ -93,6 +93,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   openLogout(){
-    alert("Do you want to logout?");
+    if(confirm("Are you sure you want to logout ?")) {
+      console.log("Logout")
+    }
   }
 }
