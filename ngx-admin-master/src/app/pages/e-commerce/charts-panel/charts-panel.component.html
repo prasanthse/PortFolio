@@ -6,7 +6,36 @@
         <ngx-chart-panel-header [type]="period"
                                 (periodChange)="setPeriodAndGetChartData($event)">
         </ngx-chart-panel-header>
-        <ngx-orders-chart #ordersChart [ordersChartData]="ordersChartData"></ngx-orders-chart>
+
+        <article>
+
+          <div>
+              <hr class="bg-primary">
+          
+              <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center bg-danger">
+                    <h6>Project: Game Development</h6>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center bg-success">
+                    <h6>Platform: Fiverr</h6>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center bg-primary">
+                    <h6>Client: John</h6>
+                </div>
+              </div>
+              
+              <br>
+            
+              <p class="bg-light">
+                Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: 
+                a paragraph is a group of at least five sentences, a paragraph is half a page long, etc.
+              </p>
+              <p class="bg-light d-flex justify-content-end"><i><b>2019/07/25</b></i><p>
+              <button type="button" id="delete" class="btn-primary">Delete</button>
+          </div>
+  
+          </article>
+
       </div>
     </nb-tab>
     <nb-tab tabTitle="Profit" [lazyLoad]="true">
@@ -15,7 +44,50 @@
         <ngx-chart-panel-header [type]="period"
                                 (periodChange)="setPeriodAndGetChartData($event)">
         </ngx-chart-panel-header>
-        <ngx-profit-chart #profitChart [profitChartData]="profitChartData"></ngx-profit-chart>
+
+        <article>
+  
+            <hr class="bg-success">
+          
+            <div class="row">
+              <div class="col-sm-4 d-flex justify-content-center bg-danger">
+                  <h6>Project Type</h6>
+              </div>
+              <div class="col-sm-4 d-flex justify-content-center bg-success">
+                  <h6>Platform</h6>
+              </div>
+              <div class="col-sm-4 d-flex justify-content-center bg-primary">
+                  <h6>Profit</h6>
+              </div>
+            </div>
+
+            <div>
+              <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center bg-light">
+                  <h6>Web Development</h6>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center bg-light">
+                  <h6>Free Lancer</h6>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center bg-light">
+                  <h6>$10</h6>
+                </div>
+              </div>
+            </div>
+
+          </article>
+
+          <br>
+          <hr>
+
+          <div class="row bg-warning">
+            <div class="col-sm-12 d-flex justify-content-center">
+              <h5>Total Profit: $50</h5>
+            </div>
+          </div>
+          
+          <hr>
+
       </div>
     </nb-tab>
   </nb-tabset>

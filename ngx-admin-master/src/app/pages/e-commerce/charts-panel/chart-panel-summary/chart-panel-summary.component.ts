@@ -6,13 +6,13 @@ import { Component, Input } from '@angular/core';
   template: `
     <div class="summary-container">
       <div *ngFor="let item of summary">
-        <div>{{ item.title }}</div>
-        <div class="h6">{{ item.value }}</div>
+        <div>Game Development</div>
+        <div class="h6">8</div>
       </div>
     </div>
   `,
 })
 export class ChartPanelSummaryComponent {
-  @Input() summary: {title: string; value: number}[];
+  @Input() summary: {title: string; value: number}[];  
 }
 
