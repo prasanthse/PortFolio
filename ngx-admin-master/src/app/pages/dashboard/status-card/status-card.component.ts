@@ -7,13 +7,13 @@ import { Component, Input } from '@angular/core';
     <nb-card (click)="on = !on" [ngClass]="{'off': !on}">
       <div class="icon-container">
         <div class="icon status-{{ type }}">
-          <ng-content></ng-content>
+          <!--<ng-content></ng-content>-->
         </div>
       </div>
 
       <div class="details">
-        <div class="title h5">{{ title }}</div>
-        <div class="status paragraph-2">{{ on ? 'ON' : 'OFF' }}</div>
+        <div class="title h5">{{ projectType }}</div>
+        <div class="title p">{{ projectCount }}</div>
       </div>
     </nb-card>
   `,
@@ -23,4 +23,7 @@ export class StatusCardComponent {
   @Input() title: string;
   @Input() type: string;
   @Input() on = true;
+
+  projectType: string = "Game Development";
+  projectCount: number = 10;
 }
