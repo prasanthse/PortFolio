@@ -13,13 +13,8 @@
 </div></div>
 
 <div class="header-container">
-  <nb-actions size="small">
-    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
-      <nb-user [nbContextMenu]="userMenu"
-               [onlyPicture]="userPictureOnly"
-               [name]="user?.name"
-               [picture]="user?.picture">
-      </nb-user>
-    </nb-action>
-  </nb-actions>
+  <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <button type="button" class="btn-primary" style="padding: 8px" (click) = "openLogout()">LOGOUT</button>
+  </nb-action>
 </div>
+

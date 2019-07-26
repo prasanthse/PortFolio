@@ -91,4 +91,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.menuService.navigateHome();
     return false;
   }
+
+  openLogout(){
+    alert("Do you want to logout?");
+  }
 }

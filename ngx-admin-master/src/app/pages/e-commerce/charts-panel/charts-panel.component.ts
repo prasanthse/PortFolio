@@ -7,6 +7,9 @@ import { OrdersChart } from '../../../@core/data/orders-chart';
 import { ProfitChart } from '../../../@core/data/profit-chart';
 import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/data/orders-profit-chart';
 
+import { ECommerceOrderCount } from '../../../Classes/e-commerce-order-count';
+import { BackEndService } from '../../../Service/back-end.service';
+
 @Component({
   selector: 'ngx-ecommerce-charts',
   styleUrls: ['./charts-panel.component.scss'],
@@ -14,9 +17,13 @@ import { OrderProfitChartSummary, OrdersProfitChartData } from '../../../@core/d
 })
 export class ECommerceChartsPanelComponent implements OnDestroy {
 
+  url = "";
+  errorMessage: string;
   private alive = true;
 
-  chartPanelSummary: OrderProfitChartSummary[];
+  chartPanelSummary = new ECommerceOrderCount();
+
+  //chartPanelSummary: OrderProfitChartSummary[];
   period: string = 'week';
   ordersChartData: OrdersChart;
   profitChartData: ProfitChart;
@@ -24,24 +31,22 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   @ViewChild('ordersChart', { static: true }) ordersChart: OrdersChartComponent;
   @ViewChild('profitChart', { static: true }) profitChart: ProfitChartComponent;
 
-  constructor(private ordersProfitChartService: OrdersProfitChartData) {
-    this.ordersProfitChartService.getOrderProfitChartSummary()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((summary) => {
-        this.chartPanelSummary = summary;
-      });
+  constructor(private ordersProfitChartService: OrdersProfitChartData, private backend: BackEndService) {
+    //  this.ordersProfitChartService.getOrderProfitChartSummary()
+    //    .pipe(takeWhile(() => this.alive))
+    //    .subscribe((summary) => {
+    //      this.chartPanelSummary = summary;
+    //    });
 
-    this.getOrdersChartData(this.period);
-    this.getProfitChartData(this.period);
+    this.backend.getRequest(this.url).subscribe(message => {
+      this.chartPanelSummary = message;
+    }, error => this.errorMessage = error);
   }
 
   setPeriodAndGetChartData(value: string): void {
     if (this.period !== value) {
       this.period = value;
     }
-
-    this.getOrdersChartData(value);
-    this.getProfitChartData(value);
   }
 
   changeTab(selectedTab) {
@@ -50,22 +55,6 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
     } else {
       this.ordersChart.resizeChart();
     }
-  }
-
-  getOrdersChartData(period: string) {
-    this.ordersProfitChartService.getOrdersChartData(period)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(ordersChartData => {
-        this.ordersChartData = ordersChartData;
-      });
-  }
-
-  getProfitChartData(period: string) {
-    this.ordersProfitChartService.getProfitChartData(period)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(profitChartData => {
-        this.profitChartData = profitChartData;
-      });
   }
 
   ngOnDestroy() {
