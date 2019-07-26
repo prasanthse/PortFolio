@@ -12,8 +12,8 @@ import { Component, Input } from '@angular/core';
       </div>
 
       <div class="details">
-        <div class="title h5">{{ projectType }}</div>
-        <div class="title p">{{ projectCount }}</div>
+        <div class="title h5">{{ title }}</div>
+        <div class="title p">{{ type }}</div>
       </div>
     </nb-card>
   `,
@@ -23,7 +23,4 @@ export class StatusCardComponent {
   @Input() title: string;
   @Input() type: string;
   @Input() on = true;
-
-  projectType: string = "Game Development";
-  projectCount: number = 10;
 }

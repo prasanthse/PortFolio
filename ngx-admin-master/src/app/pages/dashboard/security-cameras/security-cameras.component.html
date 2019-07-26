@@ -23,16 +23,16 @@
 
     <div class="single-view" *ngIf="isSingleView">
       <div class="camera" [style.background-image]="'url(' + selectedCamera.source + ')'">
-        <span class="camera-name">Project Name</span>
+        <span class="camera-name">A</span>
       </div>
     </div>
 
     <div class="grid-view" *ngIf="!isSingleView">
       <div class="camera"
-           *ngFor="let camera of cameras"
-           [style.background-image]="'url(' + camera.source + ')'"
+           *ngFor="let proj of projDp"
+           [style.background-image]="'url(' + proj.projectDp + ')'"
            (click)="selectCamera(camera)">
-        <span class="camera-name">Project Name</span>
+        <span class="camera-name">{{projDp.title}}</span>
       </div>
     </div>
 

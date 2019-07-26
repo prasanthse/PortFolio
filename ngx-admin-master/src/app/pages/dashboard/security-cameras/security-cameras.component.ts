@@ -5,12 +5,20 @@ import { NbComponentSize, NbMediaBreakpointsService, NbThemeService } from '@neb
 
 import { Camera, SecurityCamerasData } from '../../../@core/data/security-cameras';
 
+import { DashboardProjectDps } from '../../../Classes/dashboard-project-dps';
+import { BackEndService } from '../../../Service/back-end.service';
+
 @Component({
   selector: 'ngx-security-cameras',
   styleUrls: ['./security-cameras.component.scss'],
   templateUrl: './security-cameras.component.html',
 })
 export class SecurityCamerasComponent implements OnInit, OnDestroy {
+
+  urlProjDp = "";
+  errorMessage: string;
+
+  projDp: DashboardProjectDps[] = [];
 
   private destroy$ = new Subject<void>();
 
@@ -22,16 +30,21 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
   constructor(
     private themeService: NbThemeService,
     private breakpointService: NbMediaBreakpointsService,
+    private backend: BackEndService,
     private securityCamerasService: SecurityCamerasData,
   ) {}
 
   ngOnInit() {
-    this.securityCamerasService.getCamerasData()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((cameras: Camera[]) => {
-        this.cameras = cameras;
-        this.selectedCamera = this.cameras[0];
-      });
+    //  this.securityCamerasService.getCamerasData()
+    //    .pipe(takeUntil(this.destroy$))
+    //    .subscribe((cameras: Camera[]) => {
+    //      this.cameras = cameras;
+    //      this.selectedCamera = this.cameras[0];
+    //    });
+
+    this.backend.getRequest(this.urlProjDp).subscribe(message => {
+      this.projDp = message;
+    }, error => this.errorMessage = error);
 
     const breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
