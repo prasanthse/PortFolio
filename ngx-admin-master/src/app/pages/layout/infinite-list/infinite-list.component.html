@@ -1,7 +1,16 @@
 <div class="infinite-cards row">
   <div class="col-md-12 col-lg-12 col-xxxl-12">
     <nb-card>
-      <nb-card-header class="bg-danger">INBOX</nb-card-header>
+      <nb-card-header class="bg-danger">
+        <div class="row">
+          <div class="col-sm-10">
+            INBOX
+          </div>
+          <div class="col-sm-2">
+            <button type="submit" class="btn-light d-flex justify-content-end" id="deleteAll" style="padding: 5px; border:none;" (click) = "DeleteAll()">Delete All</button>
+          </div>
+        </div>
+      </nb-card-header>
       <nb-list
         nbInfiniteList
         listenWindowScroll

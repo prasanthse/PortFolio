@@ -5,6 +5,7 @@ import { SolarData } from '../../@core/data/solar';
 
 import { DashboardProjectCount } from '../../Classes/dashboard-project-count';
 import { BackEndService } from '../../Service/back-end.service';
+import { ViewerResponse } from '../../Classes/viewer-response';
 
 // interface CardSettings {
 //   title: string;
@@ -20,77 +21,22 @@ import { BackEndService } from '../../Service/back-end.service';
 export class DashboardComponent implements OnDestroy {
 
   urlProjCount = "";
+  urlViewerResponse = "";
   errorMessage: string;
+
+  viewerResponse = new ViewerResponse();
 
   private alive = true;
 
   solarValue: number;
-  // lightCard: CardSettings = {
-  //   title: 'Light',
-  //   iconClass: 'nb-lightbulb',
-  //   type: 'primary',
-  // };
-  // rollerShadesCard: CardSettings = {
-  //   title: 'Roller Shades',
-  //   iconClass: 'nb-roller-shades',
-  //   type: 'success',
-  // };
-  // wirelessAudioCard: CardSettings = {
-  //   title: 'Wireless Audio',
-  //   iconClass: 'nb-audio',
-  //   type: 'info',
-  // };
-  // coffeeMakerCard: CardSettings = {
-  //   title: 'Coffee Maker',
-  //   iconClass: 'nb-coffee-maker',
-  //   type: 'warning',
-  // };
-
+  
   statusCards = new DashboardProjectCount();
 
-  // commonStatusCardsSet: CardSettings[] = [
-  //   this.lightCard,
-  //   this.rollerShadesCard,
-  //   this.wirelessAudioCard,
-  //   this.coffeeMakerCard,
-  // ];
-
-  // statusCardsByThemes: {
-  //   default: CardSettings[];
-  //   cosmic: CardSettings[];
-  //   corporate: CardSettings[];
-  //   dark: CardSettings[];
-  // } = {
-  //   default: this.commonStatusCardsSet,
-  //   cosmic: this.commonStatusCardsSet,
-  //   corporate: [
-  //     {
-  //       ...this.lightCard,
-  //       type: 'warning',
-  //     },
-  //     {
-  //       ...this.rollerShadesCard,
-  //       type: 'primary',
-  //     },
-  //     {
-  //       ...this.wirelessAudioCard,
-  //       type: 'danger',
-  //     },
-  //     {
-  //       ...this.coffeeMakerCard,
-  //       type: 'info',
-  //     },
-  //   ],
-  //   dark: this.commonStatusCardsSet,
-  // };
-
-  constructor(private themeService: NbThemeService,
-              private solarService: SolarData, private backend: BackEndService) {
-    // this.themeService.getJsTheme()
-    //   .pipe(takeWhile(() => this.alive))
-    //   .subscribe(theme => {
-    //     this.statusCards = this.statusCardsByThemes[theme.name];
-    // });
+  constructor(private solarService: SolarData, private backend: BackEndService) {
+  
+    this.backend.getRequest(this.urlViewerResponse).subscribe(message => {
+      this.viewerResponse = message;
+    }, error => this.errorMessage = error);
 
     this.backend.getRequest(this.urlProjCount).subscribe(message => {
       this.statusCards = message;

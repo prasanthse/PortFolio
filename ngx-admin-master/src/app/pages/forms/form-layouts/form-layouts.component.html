@@ -42,10 +42,10 @@
           <div class="form-group row">
             <label class="col-sm-6 label">Select your profile photo</label>
             <div class="col-sm-6">
-              <button type="button" nbButton status="light" id="profButton">Select</button>
+              <input type="file" (change)="FileSelected($event)">
             </div>
           </div>
-          <button type="submit" nbButton status="success">Upload</button>
+          <button type="submit" nbButton status="success" (click)="upload()">Upload</button>
         </form>
       </nb-card-body>
     </nb-card>

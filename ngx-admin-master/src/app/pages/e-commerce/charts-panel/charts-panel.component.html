@@ -9,27 +9,37 @@
 
         <article>
 
-          <div *ngFor = "let order of orderDetails">
-              <hr class="bg-primary">
-          
-              <div class="row">
-                <div class="col-sm-4 d-flex justify-content-center bg-danger">
-                    <h6>Project: {{order.project}}</h6>
-                </div>
-                <div class="col-sm-4 d-flex justify-content-center bg-success">
-                    <h6>Platform: {{order.platform}}</h6>
-                </div>
-                <div class="col-sm-4 d-flex justify-content-center bg-primary">
-                    <h6>Client: {{order.client}}</h6>
-                </div>
+          <div *ngIf = "!hasOrders">
+            <div class="row">
+              <div class="col-sm-12 bg-danger d-flex justify-content-center">
+                <h4 class="text-light">NO ORDERS YET</h4>
               </div>
-              
-              <br>
-            
-              <p class="bg-light">{{order.brief}}</p>
+            </div>
+          </div>
 
-              <p class="bg-light d-flex justify-content-end"><i><b>{{order.date}}</b></i><p>
-              <button type="button" id="delete" class="btn-primary" (click) = "deleteOrderDetail(order.id)">Delete</button> 
+          <div *ngIf = "hasOrders">
+              <div *ngFor = "let order of orderDetails">
+                  <hr class="bg-primary">
+              
+                  <div class="row">
+                    <div class="col-sm-4 d-flex justify-content-center bg-danger">
+                        <h6>Project: {{order.project}}</h6>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center bg-success">
+                        <h6>Platform: {{order.platform}}</h6>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center bg-primary">
+                        <h6>Client: {{order.client}}</h6>
+                    </div>
+                  </div>
+                  
+                  <br>
+                
+                  <p class="bg-light">{{order.brief}}</p>
+    
+                  <p class="bg-light d-flex justify-content-end"><i><b>{{order.date}}</b></i><p>
+                  <button type="button" id="delete" class="btn-primary" (click) = "deleteOrderDetail(order.id)">Delete</button> 
+              </div>
           </div>
   
           </article>
@@ -44,33 +54,43 @@
         </ngx-chart-panel-header>
 
         <article>
-  
-            <hr class="bg-success">
-          
-            <div class="row">
-              <div class="col-sm-4 d-flex justify-content-center bg-danger">
-                  <h6>Project Type</h6>
-              </div>
-              <div class="col-sm-4 d-flex justify-content-center bg-success">
-                  <h6>Platform</h6>
-              </div>
-              <div class="col-sm-4 d-flex justify-content-center bg-primary">
-                  <h6>Profit</h6>
+
+            <div *ngIf = "!hasOrders">
+              <div class="row">
+                <div class="col-sm-12 bg-danger d-flex justify-content-center">
+                  <h4 class="text-light">NO PROFIT YET</h4>
+                </div>
               </div>
             </div>
-
-            <div *ngFor = "let order of orderDetails">
-              <div class="row">
-                <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>{{order.project}}</h6>
+  
+            <div *ngIf = "hasOrders">
+                <hr class="bg-success">
+          
+                <div class="row">
+                  <div class="col-sm-4 d-flex justify-content-center bg-danger">
+                      <h6>Project Type</h6>
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-center bg-success">
+                      <h6>Platform</h6>
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-center bg-primary">
+                      <h6>Profit</h6>
+                  </div>
                 </div>
-                <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>{{order.platform}}</h6>
+    
+                <div *ngFor = "let order of orderDetails">
+                  <div class="row">
+                    <div class="col-sm-4 d-flex justify-content-center bg-light">
+                      <h6>{{order.project}}</h6>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center bg-light">
+                      <h6>{{order.platform}}</h6>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-center bg-light">
+                      <h6>${{order.profit}}</h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-4 d-flex justify-content-center bg-light">
-                  <h6>${{order.profit}}</h6>
-                </div>
-              </div>
             </div>
 
           </article>
@@ -78,9 +98,11 @@
           <br>
           <hr>
 
-          <div class="row bg-warning">
-            <div class="col-sm-12 d-flex justify-content-center">
-              <h5>Total Profit: ${{chartPanelSummary.totalProfit}}</h5>
+          <div *ngIf = "hasOrders">
+            <div class="row bg-warning">
+              <div class="col-sm-12 d-flex justify-content-center">
+                <h5>Total Profit: ${{chartPanelSummary.totalProfit}}</h5>
+              </div>
             </div>
           </div>
           

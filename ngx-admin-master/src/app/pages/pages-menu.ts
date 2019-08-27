@@ -18,11 +18,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/layout/infinite-list',
   },
   {
-    title: 'Control Messages',
-    icon: 'grid-outline',
-    link: '/pages/tables/smart-table',
-  },
-  {
     title: 'Forms',
     icon: 'edit-2-outline',
     link: '/pages/forms/layouts',

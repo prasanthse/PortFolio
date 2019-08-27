@@ -23,6 +23,9 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
   urlDelete = "";
   errorMessage: string;
 
+  hasOrders: true;
+  
+
   private alive = true;
 
   orderDetails: ECommerceOrders[] = [];

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NewsService } from '../news.service';
 
+import { BackEndService } from '../../../Service/back-end.service';
+
 @Component({
   selector: 'ngx-infinite-list',
   templateUrl: 'infinite-list.component.html',
@@ -8,6 +10,8 @@ import { NewsService } from '../news.service';
 })
 export class InfiniteListComponent {
 
+  urlDeleteAllMessage = "/Contacts/deleteAll";
+  errorMessage = "";
 
   firstCard = {
     news: [],
@@ -23,7 +27,7 @@ export class InfiniteListComponent {
   };
   pageSize = 10;
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, private backend: BackEndService) {}
 
   loadNext(cardData) {
     if (cardData.loading) { return; }
@@ -38,4 +42,15 @@ export class InfiniteListComponent {
         cardData.pageToLoadNext++;
       });
   }
+
+  DeleteAll(){
+    if(confirm("Are you sure you want to delete all the messages?")) {
+      this.backend.getRequest(this.urlDeleteAllMessage).subscribe(message => {
+        if(message){
+          console.log(message);
+        }
+      }, error => this.errorMessage = error); 
+    }
+  }
+
 }
