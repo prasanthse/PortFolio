@@ -29,4 +29,8 @@ export class BackEndService {
   postRequest(url: string, body:any):Observable<any> {
     return this.http.post<any>(url, body, this.httpOptions).pipe(catchError(this.errorHandler));
   }
+
+  deleteRequest(url: string):Observable<any> {
+    return this.http.delete<any>(url).pipe(catchError(this.errorHandler));
+  }
 }

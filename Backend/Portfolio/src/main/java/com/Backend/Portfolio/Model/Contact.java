@@ -13,6 +13,7 @@ public class Contact {
     private String phoneNumber;
     private String email;
     private String message;
+    private String date;
 
     public Contact() {
     }
@@ -64,6 +65,14 @@ public class Contact {
         this.message = message;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Contact{" +
@@ -72,6 +81,7 @@ public class Contact {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", message='" + message + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

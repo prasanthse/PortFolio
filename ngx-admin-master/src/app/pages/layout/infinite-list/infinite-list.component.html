@@ -7,21 +7,50 @@
             INBOX
           </div>
           <div class="col-sm-2">
-            <button type="submit" class="btn-light d-flex justify-content-end" id="deleteAll" style="padding: 5px; border:none;" (click) = "DeleteAll()">Delete All</button>
+            <button type="submit" class="btn-light d-flex justify-content-end" id="deleteAll" style="padding: 5px; border:none;" (click) = "DeleteAll()" [disabled] = "noMessage">Delete All</button>
           </div>
         </div>
       </nb-card-header>
+
+      <div *ngIf = "noMessage">
+          <br>
+          <div class="row">
+              <div class="col-sm-12 d-flex justify-content-center">
+                <h4 class="text-warning">NO MESSAGES YET</h4>
+              </div>
+          </div>
+      </div>
+      
       <nb-list
         nbInfiniteList
         listenWindowScroll
         [threshold]="500"
         (bottomThreshold)="loadNext(secondCard)">
-        <nb-list-item *ngFor="let newsPost of secondCard.news">
-          <ngx-news-post [post]="newsPost"></ngx-news-post>
-        </nb-list-item>
-        <nb-list-item *ngFor="let _ of secondCard.placeholders">
-          <ngx-news-post-placeholder></ngx-news-post-placeholder>
-        </nb-list-item>
+
+            <nb-list-item *ngFor="let mess of messages">
+              <div *ngIf = "!noMessage">
+                <hr class="bg-danger">
+    
+                <div class="row">
+                  <div class="col-sm-4 d-flex justify-content-start">
+                      <h6>Name: {{mess.name}}</h6>
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-center">
+                      <h6>Email: <a style="text-decoration: none" href="mailto:prasanth15sp@gmail.com?subject=Portfolio%20Response">{{mess.email}}</a></h6>
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-end">
+                      <h6>Tel: {{mess.phoneNumber}}</h6>
+                  </div>
+                </div>
+                
+                <br>
+              
+                <p>{{mess.message}}</p>
+    
+                <p><i><small>{{mess.date}}</small></i><p>
+                <button type="button" id="delete" class="btn-danger" (click) = "DeleteMessage(mess.id)">Delete</button>
+              </div>
+            </nb-list-item>
       </nb-list>
     </nb-card>
   </div>

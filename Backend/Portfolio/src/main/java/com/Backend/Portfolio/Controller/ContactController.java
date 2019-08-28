@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("Contacts")
@@ -21,6 +23,11 @@ public class ContactController {
 
         RandomIdGenerator randomIdGenerator = new RandomIdGenerator();
         contact.setId(randomIdGenerator.generateId());
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        contact.setDate(dtf.format(now));
 
         System.out.println(contact.toString());
 

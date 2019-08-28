@@ -21,6 +21,8 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,6 +30,8 @@ import {
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+
+    FormsModule,
 
     ThemeModule.forRoot(),
 

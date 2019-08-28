@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
+
+
 const TOTAL_PAGES = 7;
 
 export class NewsPost {
