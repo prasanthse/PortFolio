@@ -35,7 +35,7 @@ export class FormLayoutsComponent {
     }, error => this.errorMessage = error);
   }
 
-  uploadProfileBody(form){
-    console.log("form - " + form);
+  uploadProfileBody(test){
+    console.log("text: ");
   }
 }
